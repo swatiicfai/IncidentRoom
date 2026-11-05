@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IncidentRoom — Autonomous SRE War Room</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; }
+  .hero { background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%); border-bottom: 1px solid #30363d; padding: 80px 24px; text-align: center; }
+  .badge { display: inline-block; background: #238636; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-bottom: 20px; }
+  h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; }
+  h1 span { color: #58a6ff; }
+  .subtitle { font-size: 20px; color: #8b949e; max-width: 600px; margin: 0 auto 40px; }
+  .buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+  .btn-primary { background: #238636; color: #fff; }
+  .btn-primary:hover { background: #2ea043; }
+  .btn-secondary { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+  .btn-secondary:hover { background: #30363d; }
+  .btn-red { background: #da3633; color: #fff; }
+  .btn-red:hover { background: #f85149; }
+  .section { padding: 64px 24px; max-width: 1000px; margin: 0 auto; }
+  h2 { font-size: 32px; margin-bottom: 32px; border-bottom: 1px solid #30363d; padding-bottom: 16px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px; }
+  .card-icon { font-size: 36px; margin-bottom: 16px; }
+  .card h3 { font-size: 20px; margin-bottom: 10px; color: #58a6ff; }
+  .card p { color: #8b949e; line-height: 1.6; }
+  .flow { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; font-family: monospace; font-size: 14px; line-height: 2; }
+  .flow .green { color: #3fb950; }
+  .flow .blue { color: #58a6ff; }
+  .flow .orange { color: #d29922; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+  .metric { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; text-align: center; }
+  .metric .number { font-size: 36px; font-weight: 700; color: #3fb950; }
+  .metric .label { color: #8b949e; font-size: 13px; margin-top: 4px; }
+  footer { border-top: 1px solid #30363d; padding: 40px 24px; text-align: center; color: #8b949e; }
+  footer a { color: #58a6ff; text-decoration: none; }
+  .video-container { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; margin-top: 32px; }
+  .video-container iframe { width: 100%; height: 480px; border: none; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">🏆 Flip the Switch Hackathon 2026</div>
+  <h1>🚨 Incident<span>Room</span></h1>
+  <p class="subtitle">Autonomous SRE War Room — 3 AI agents, 1 chat room, zero chaos. Built on Switch AI.</p>
+  <div class="buttons">
+    <a href="https://youtu.be/gvqgkVetPTc" class="btn btn-red" target="_blank">▶️ Watch Demo</a>
+    <a href="https://github.com/swatiicfai/IncidentRoom" class="btn btn-primary" target="_blank">⭐ GitHub Repo</a>
+    <a href="https://github.com/swatiicfai/IncidentRoom/blob/main/POSTMORTEM_LIVE.md" class="btn btn-secondary" target="_blank">📄 Post-Mortem</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>⚡ How It Works</h2>
+  <div class="flow">
+    <div class="green">📢 SEV-1 alert fires in #incident-war-room</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+    <div class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ @triage-agent — 11 tool calls, 3m 16s</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔍 Root cause: commit 8f2b31a "feat(payments): upgrade stripe sdk v3.4"</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+    <div class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ HANDOFF → @sre-agent</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔧 npm pack stripe@3.4.0 → "Awaiting APPROVE"</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+    <div class="orange">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ Human: "APPROVE" (via Wispr Flow voice dictation)</div>
+    <div class="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✅ Rollback executed</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</div>
+    <div class="blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ @comms-agent → Post-mortem auto-generated 📄</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🤖 The Three Agents</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>@triage-agent</h3>
+      <p>Incident Detective. Ingests alerts & stack traces, correlates against git commits, isolates root cause commit with confidence metrics. Ran 11 tool calls in 3m 16s.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h3>@sre-agent</h3>
+      <p>Remediation Specialist. Prepares rollback plans, evaluates blast radius, executes bash/deployment commands — only after explicit human APPROVE.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📢</div>
+      <h3>@comms-agent</h3>
+      <p>Incident Commander & Scribe. Publishes stakeholder updates, tracks incident timeline, auto-generates structured post-mortems with MTTR and action items.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📊 Live Incident Metrics</h2>
+  <div class="metrics">
+    <div class="metric"><div class="number">&lt;2min</div><div class="label">Total MTTR</div></div>
+    <div class="metric"><div class="number">11</div><div class="label">Triage Tool Calls</div></div>
+    <div class="metric"><div class="number">1</div><div class="label">Human Touch-Point</div></div>
+    <div class="metric"><div class="number">405</div><div class="label">Wispr Words @ 100wpm</div></div>
+    <div class="metric"><div class="number">3</div><div class="label">AI Agents Active</div></div>
+    <div class="metric"><div class="number">0</div><div class="label">Manual Post-Mortems</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🎬 Demo Video</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/gvqgkVetPTc" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🚀 Quick Start</h2>
+  <div class="flow">
+    <div class="green"># Clone & install</div>
+    <div>git clone https://github.com/swatiicfai/IncidentRoom</div>
+    <div>cd IncidentRoom && npm install</div>
+    <div></div>
+    <div class="green"># Configure Switch server</div>
+    <div>cp .env.example .env</div>
+    <div></div>
+    <div class="green"># Run live SEV-1 simulation</div>
+    <div>node src/simulate.js</div>
+  </div>
+</div>
+
+<footer>
+  <p>Built for the <a href="https://wemakedevs.org/hackathons/switch">Flip the Switch Hackathon 2026</a> by WeMakeDevs × Switch AI</p>
+  <p style="margin-top: 8px;">
+    <a href="https://github.com/swatiicfai/IncidentRoom">GitHub</a> ·
+    <a href="https://youtu.be/gvqgkVetPTc">Demo</a> ·
+    <a href="https://github.com/sandbox-quantum/switch">Switch AI</a>
+  </p>
+</footer>
+
+</body>
+</html>
