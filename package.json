@@ -1,0 +1,13 @@
+{
+  "name": "incident-room",
+  "version": "1.0.0",
+  "description": "Autonomous SRE War Room with Multi-Agent Swarm for Team Chat powered by Switch AI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "simulate": "node src/simulate.js"
+  },
+  "keywords": ["switch-ai", "incident-management", "sre", "multi-agent", "hackathon"],
+  "author": "Swati",
+  "license": "MIT"
+}
