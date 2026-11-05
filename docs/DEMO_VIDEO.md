@@ -4,7 +4,9 @@
 
 > **Watch the full live incident simulation:** agents detecting, triaging, rolling back, and auto-generating a post-mortem in under 2 minutes.
 
-📹 **[View Demo Video](https://github.com/swatiicfai/IncidentRoom/blob/main/docs/images/)**
+📹 **[▶️ Watch on YouTube](https://youtu.be/gvqgkVetPTc)**
+
+[![Watch the Demo](https://img.youtube.com/vi/gvqgkVetPTc/maxresdefault.jpg)](https://youtu.be/gvqgkVetPTc)
 
 ---
 

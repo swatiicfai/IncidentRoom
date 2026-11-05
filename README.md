@@ -5,7 +5,15 @@
 [![Hackathon](https://img.shields.io/badge/Flip%20the%20Switch-Hackathon%202026-blue)](https://wemakedevs.org/hackathons/switch)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Wispr Flow](https://img.shields.io/badge/Built%20with-Wispr%20Flow-orange)](https://wisprflow.ai)
-[![Demo Video](https://img.shields.io/badge/Demo%20Video-Ready-red.svg)](docs/DEMO_VIDEO.md)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-YouTube-red.svg)](https://youtu.be/gvqgkVetPTc)
+
+---
+
+## 🎬 Demo Video
+
+[![Watch the Demo](https://img.youtube.com/vi/gvqgkVetPTc/maxresdefault.jpg)](https://youtu.be/gvqgkVetPTc)
+
+▶️ **[Watch on YouTube](https://youtu.be/gvqgkVetPTc)** — Live SEV-1 incident: triage → rollback → post-mortem in under 2 minutes.
 
 ---
 
